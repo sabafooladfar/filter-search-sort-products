@@ -1,0 +1,32 @@
+.product{
+    padding: 10px 40px;
+    margin: 15px;
+    border: 1px solid rgb(90, 83, 83);
+    border-radius: 15px;
+}
+.product p{
+    padding: 5px;
+}
+.product button{
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.quantity{
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgba(156, 146, 146, 0.288);
+    display: flex;
+    width: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+.product input{
+    padding: 5px;
+    margin: 5px;
+}
+.remove{
+    color: red;
+    border-color: red;
+}
