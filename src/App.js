@@ -11,6 +11,9 @@ import Wrapper from "./Component/Wrapper/Wrapper";
 import ClickCounter from "./Component/hoc/ClickCounter";
 import HoverCounter from "./Component/hoc/HoverCounter";
 import UseRefEx from "./Component/UseRefEx";
+import CounterProvider from "./Component/Context/CounterProvider";
+import CounterOne from "./Component/Context/CounterOne";
+import CountReducer from "./Component/Reducer/CountReducer";
 
 class App extends React.Component {
   state = {
@@ -58,9 +61,6 @@ class App extends React.Component {
   render() {
     return (
       <Wrapper class="container">
-        <UseRefEx />
-        {/* <ClickCounter/>
-        <HoverCounter/> */}
         {/* <NavBar
           totalItems={this.state.products.filter((p) => p.quantity > 0).length}
           />
@@ -72,6 +72,13 @@ class App extends React.Component {
           onDecrement={this.decHandler}
           onChange={this.changeHandler}
           /> */}
+        <CounterProvider>
+          <h2>welcome</h2>
+          <CounterOne />
+        </CounterProvider>
+        {/* <UseRefEx /> */}
+        {/* <ClickCounter/>
+        <HoverCounter/> */}
         {/* <button
             onClick={() => this.setState({ isShow: !this.state.isShow })}
           >{this.state.isShow ? "hide" : "show"}</button>
