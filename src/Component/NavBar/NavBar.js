@@ -1,15 +1,14 @@
-import { Component } from "react";
-import style from "./NavBar.module.css"
+import { useProducts } from "../Providers/ProductsProvider";
+import style from "./NavBar.module.css";
 
-class NavBar extends Component {
-    state = {  } 
-    render() { 
-        return (
-            <div>
-                <p className={style.badge}>{this.props.totalItems}</p>
-            </div>
-        );
-    }
-}
- 
+const NavBar = () => {
+  const products = useProducts();
+  const totalItems = products.filter((p) => p.quantity > 0).length;
+  return (
+    <div>
+      <p className={style.badge}>{totalItems}</p>
+    </div>
+  );
+};
+
 export default NavBar;

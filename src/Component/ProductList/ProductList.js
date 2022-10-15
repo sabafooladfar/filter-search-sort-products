@@ -1,11 +1,11 @@
-import { Component } from "react";
 import Product from "../product/Product";
+import { useProducts, useProductsAction } from "../Providers/ProductsProvider";
 import styles from "./productList.module.css";
 
-class ProductList extends Component {
-  renderProduct = () => {
-    const { products, onChange, onRemove, onDecrement, onIncrement } =
-      this.props;
+const ProductList = () => {
+  const products = useProducts();
+  const dispatch = useProductsAction();
+  const renderProduct = () => {
     if (products.length === 0) return <div>Cart is empty !</div>;
 
     return products.map((product, index) => {
@@ -14,24 +14,24 @@ class ProductList extends Component {
           <Product
             product={product}
             key={index}
-            click={() => onRemove(product.id)}
-            inc={() => onIncrement(product.id)}
-            dec={() => onDecrement(product.id)}
-            inputChange={(e) => onChange(e,product.id)}
+            click={() => dispatch({ type: "remove", id: product.id })}
+            inc={() => dispatch({ type: "increment", id: product.id })}
+            dec={() => dispatch({ type: "decrement", id: product.id })}
+            inputChange={(e) =>
+              dispatch({ type: "edit", id: product.id, event: e })
+            }
           />
         </div>
       );
     });
   };
-  render() {
-    const{products}= this.props;
-    return (
-      <div className={styles.productList}>
-        {!products.length && <div>go to products</div>} <br />
-        {this.renderProduct()}
-      </div>
-    );
-  }
-}
+
+  return (
+    <div className={styles.productList}>
+      {!products.length && <div className={styles.link}>go to products</div>}
+      {renderProduct()}
+    </div>
+  );
+};
 
 export default ProductList;

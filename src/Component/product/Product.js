@@ -4,16 +4,18 @@ import { BiTrash } from "react-icons/bi";
 const Product = ({ product, inputChange, inc, dec, click }) => {
   return (
     <div className={styles.product}>
-      <p>{product.title}</p>
-      <p>{product.price} $</p>
+      {/* <img className={styles.productImg} src={product.image} /> */}
+      <p className={styles.title}>{product.title}</p>
+      <p>Price: {product.price} $</p>
+      {/* <p>Available Size: {product.size}</p> */}
       <span className={styles.quantity}>{product.quantity}</span>
-      <input
+      {/* <input
         type="text"
         onChange={inputChange}
         value={product.title}
         data-id={product.id}
-      />
-      <br />
+      /> */}
+      
       <button
         className={styles.btn}
         onClick={inc}

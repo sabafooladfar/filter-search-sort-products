@@ -1,11 +1,13 @@
 .product{
-    padding: 10px 40px;
+    padding: 10px 10px;
     margin: 15px;
     border: 1px solid rgb(90, 83, 83);
     border-radius: 15px;
+    background-color: rgba(59, 57, 61, 0.26);
+
 }
-.product p{
-    padding: 5px;
+.title{
+   font-weight: bolder;
 }
 .product button{
     padding: 5px;
@@ -22,9 +24,9 @@
     align-items: center;
     margin: 5px;
 }
-.product input{
-    padding: 5px;
-    margin: 5px;
+.productImg{
+    width: 20%;
+    height: 50%;
 }
 .remove{
     color: red;

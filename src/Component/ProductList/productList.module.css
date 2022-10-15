@@ -1,5 +1,10 @@
 .productList{
+    /* width: 50%; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    
+}
+.link{
+    cursor: pointer;
+    text-decoration: underline;
 }
