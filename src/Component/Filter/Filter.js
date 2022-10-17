@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import SelectCompnent from "../../common/Select/Select";
 import { productsData } from "../../db/products";
 import { useProducts, useProductsAction } from "../Providers/ProductsProvider";
+import SearchBar from "../../common/search/Search";
 
 const sizeOptions = [
   { value: "", label: "All" },
@@ -35,18 +37,20 @@ const Filter = () => {
   return (
     <div>
       <br />
+      <SearchBar filter={size} />
       <p>filter products based on :</p>
       <div>
-        order by :
-        <Select
-          value={size}
-          onChange={sizeChangeHandler}
-          options={sizeOptions}
+        <SelectCompnent
+        title="order by size"
+         value={size}
+         onChange={sizeChangeHandler}
+         options={sizeOptions}
         />
-        <Select
-          value={price}
-          onChange={priceChangeHandler}
-          options={priceOptions}
+        <SelectCompnent
+        title="sort by price"
+        value={price}
+        onChange={priceChangeHandler}
+        options={priceOptions}
         />
       </div>
       <br />

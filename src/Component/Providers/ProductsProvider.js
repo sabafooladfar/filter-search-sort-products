@@ -5,8 +5,6 @@ import _ from "lodash";
 const ProductsContext = React.createContext();
 const ProductsContextDispatcher = React.createContext();
 
-const initialState = productsData;
-
 const reducer = (state, action) => {
   switch (action.type) {
     case "increment": {
@@ -57,18 +55,28 @@ const reducer = (state, action) => {
       if (action.selectedOption.value === "") {
         return productsData;
       } else if (action.selectedOption.value === "cheapest") {
-      return  _.orderBy(products, 'price', 'asc');
+        return _.orderBy(products, "price", "asc");
       } else {
-        return  _.orderBy(products, 'price', 'desc');
-
+        return _.orderBy(products, "price", "desc");
+      }
+    }
+    case "search": {
+      const value = action.event.target.value;
+      if (value === "") {
+        return state;
+      } else {
+        const searchProduct = state.filter((p) => 
+          p.title.toLowerCase().includes(value.toLowerCase())
+        );
+        return searchProduct;
       }
     }
     default:
-      return;
+      return state;
   }
 };
 const ProductsProvider = ({ children }) => {
-  const [products, dispatch] = useReducer(reducer, initialState);
+  const [products, dispatch] = useReducer(reducer, productsData);
 
   return (
     <ProductsContext.Provider value={products}>

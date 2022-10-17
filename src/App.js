@@ -5,6 +5,7 @@ import NavBar from "./Component/NavBar/NavBar";
 import Wrapper from "./Component/Wrapper/Wrapper";
 import ProductsProvider from "./Component/Providers/ProductsProvider";
 import Filter from "./Component/Filter/Filter";
+import SearchBar from "./common/search/Search";
 
 const App = () => {
   return (
