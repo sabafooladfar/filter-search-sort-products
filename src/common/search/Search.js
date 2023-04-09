@@ -14,7 +14,7 @@ const SearchBar = ({ filter }) => {
   return (
     <div>
       <form className={styles.formControl}>
-        <div>Search Products</div>
+        <div>Search for</div>
         <input
           type="text"
           placeholder="search here ..."

@@ -5,7 +5,8 @@ const NavBar = () => {
   const products = useProducts();
   const totalItems = products.filter((p) => p.quantity > 0).length;
   return (
-    <div>
+    <div className={style.nav}>
+      <p>saba's shopping </p>
       <p className={style.badge}>{totalItems}</p>
     </div>
   );

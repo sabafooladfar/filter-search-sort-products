@@ -38,7 +38,6 @@ const Filter = () => {
     <div>
       <br />
       <SearchBar filter={size} />
-      <p>filter products based on :</p>
       <div>
         <SelectCompnent
         title="order by size"

@@ -4,9 +4,20 @@
     border: 2px solid #673AB7;
     border-radius: 50%;
     text-align: center;
-    background-color: #B39DDB;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #B39DDB;
     color: #EDE7F6;
+}
+.nav{
+    background-color: #b39ddb42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+}
+.nav p{
+    margin: 0 5px;
 }
